@@ -1,5 +1,6 @@
 from selenium.webdriver.firefox.webdriver import WebDriver
 
+
 class Application:
 
     def __init__(self):
@@ -32,7 +33,6 @@ class Application:
         # submit group creation
         wd.find_element_by_name("submit").click()
         self.return_to_groups_page()
-
 
     def open_groups_page(self):
         wd = self.wd

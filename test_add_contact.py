@@ -3,12 +3,14 @@ from selenium.webdriver.firefox.webdriver import WebDriver
 import unittest
 from group_contact import Group
 
+
 def is_alert_present(wd):
     try:
         wd.switch_to_alert().text
         return True
     except:
         return False
+
 
 class test_add_contact(unittest.TestCase):
     def setUp(self):
@@ -17,9 +19,7 @@ class test_add_contact(unittest.TestCase):
     
     def test_add_contact(self):
         wd = self.wd
-        self.open_home_page(wd)
         self.login(wd, username="admin", password="secret")
-        self.open_new_contact_page(wd)
         self.create_contact(wd, Group(first_name="test_first_name", middle_name="test_middle_name",
                             last_name="test_last_name", nickname="test_nickname", title="test_title",
                             company="test_company", address="test_address", home="test_home", mobile="test_mobile",
@@ -30,9 +30,7 @@ class test_add_contact(unittest.TestCase):
 
     def test_add_empty_contact(self):
         wd = self.wd
-        self.open_home_page(wd)
         self.login(wd, username="admin", password="secret")
-        self.open_new_contact_page(wd)
         self.create_contact(wd, Group(first_name="", middle_name="", last_name="", nickname="", title="", company="",
                             address="", home="", mobile="", work="", fax="", mail1="", mail2="", mail3="", homepage="",
                             address2="", home2="", notes=""))
@@ -42,6 +40,7 @@ class test_add_contact(unittest.TestCase):
         wd.find_element_by_link_text("Logout").click()
 
     def create_contact(self, wd, group):
+        self.open_new_contact_page(wd)
         # fill contact form
         wd.find_element_by_name("firstname").click()
         wd.find_element_by_name("firstname").clear()
@@ -104,6 +103,7 @@ class test_add_contact(unittest.TestCase):
         wd.find_element_by_link_text("add new").click()
 
     def login(self, wd, username, password):
+        self.open_home_page(wd)
         wd.find_element_by_name("user").click()
         wd.find_element_by_name("user").clear()
         wd.find_element_by_name("user").send_keys(username)

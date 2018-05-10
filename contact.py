@@ -1,4 +1,4 @@
-class Group:
+class Contact:
 
     def __init__(self, first_name, middle_name, last_name, nickname, title, company, address, home, mobile, work, fax,
                  mail1, mail2, mail3, homepage, address2, home2, notes):

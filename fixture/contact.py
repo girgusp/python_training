@@ -76,6 +76,20 @@ class ContactHelper:
         wd = self.app.wd
         wd.find_element_by_link_text("add new").click()
 
+    def edit_first_contact(self):
+        wd = self.app.wd
+        wd.get("http://localhost/addressbook/addressbook")
+        # select first contact to edit
+        wd.find_element_by_css_selector("#maintable > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(8) > a:nth-child(1) > img:nth-child(1)").click()
+        wd.find_element_by_name("firstname").click()
+        wd.find_element_by_name("firstname").send_keys(" added to first name")
+        wd.find_element_by_name("middlename").click()
+        wd.find_element_by_name("middlename").send_keys(" added to middle name")
+        wd.find_element_by_name("lastname").click()
+        wd.find_element_by_name("lastname").send_keys(" added to last name")
+        wd.find_element_by_name("nickname").click()
+        wd.find_element_by_name("nickname").send_keys(" added to nick name")
+
     def open_home_page(self):
         wd = self.app.wd
         wd.get("http://localhost/addressbook/addressbook")

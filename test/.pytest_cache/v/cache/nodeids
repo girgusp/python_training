@@ -5,5 +5,6 @@
   "test_add_group.py::test_add_empty_group",
   "test_del_contact.py::test_delete_first_contact",
   "test_del_group.py::test_delete_first_group",
+  "test_edit_contact.py::test_edit_first_contact",
   "test_edit_group.py::test_edit_first_group"
 ]

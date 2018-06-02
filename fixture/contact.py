@@ -9,7 +9,9 @@ class ContactHelper:
         # select first contact
         wd.find_element_by_name("selected[]").click()
         # submit deletion
-        wd.find_element_by_css_selector("[value=Delete]")
+        wd.find_element_by_css_selector("[value=Delete]").click()
+        wd.switch_to_alert().accept()
+        wd.get("http://localhost/addressbook/addressbook")
 
     def create(self, group):
         wd = self.app.wd
@@ -80,7 +82,7 @@ class ContactHelper:
         wd = self.app.wd
         wd.get("http://localhost/addressbook/addressbook")
         # select first contact to edit
-        wd.find_element_by_css_selector("#maintable > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(8) > a:nth-child(1) > img:nth-child(1)").click()
+        wd.find_element_by_css_selector('[title="Edit"]').click()
         wd.find_element_by_name("firstname").click()
         wd.find_element_by_name("firstname").send_keys(" added to first name")
         wd.find_element_by_name("middlename").click()

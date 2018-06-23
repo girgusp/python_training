@@ -3,15 +3,20 @@ from model.contact import Contact
 
 
 def test_add_contact(app):
-    app.contact.create(Contact(first_name="test_first_name", middle_name="test_middle_name",
-                               last_name="test_last_name", nickname="test_nickname", title="test_title",
-                               company="test_company", address="test_address", home="test_home", mobile="test_mobile",
-                               work="test_work", fax="test_fax", mail1="test_mail1", mail2="test_mail2",
-                               mail3="test_mail3", homepage="test_homepage", address2="test_address", home2="test_home",
-                               notes="test_notes"))
+    old_contacts = app.contact.get_contact_list()
+    contact = Contact(first_name="test_first_name")
+    app.contact.create(contact)
+    new_contacts = app.contact.get_contact_list()
+    assert len(old_contacts) + 1 == len(new_contacts)
+    old_contacts.append(contact)
+    assert sorted(old_contacts, key=Contact.id_or_max) == sorted(new_contacts, key=Contact.id_or_max)
 
 
-def test_add_empty_contact(app):
-    app.contact.create(Contact(first_name="", middle_name="", last_name="", nickname="", title="", company="",
-                               address="", home="", mobile="", work="", fax="", mail1="", mail2="", mail3="", homepage="",
-                               address2="", home2="", notes=""))
+#def test_add_empty_contact(app):
+#    old_contacts = app.contact.get_contact_list()
+#    contact = Contact(first_name="")
+#    app.contact.create(contact)
+#    new_contacts = app.contact.get_contact_list()
+#    assert len(old_contacts) + 1 == len(new_contacts)
+#    old_contacts.append(contact)
+#    assert sorted(old_contacts, key=Contact.id_or_max) == sorted(new_contacts, key=Contact.id_or_max)

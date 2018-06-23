@@ -6,11 +6,22 @@ class ContactHelper:
     def __init__(self, app):
         self.app = app
 
-    def delete_first_contact(self):
+    def select_first_contact(self):
         wd = self.app.wd
-        wd.get("http://localhost/addressbook/addressbook")
-        # select first contact
         wd.find_element_by_name("selected[]").click()
+
+    def select_contact_by_index(self, index):
+        wd = self.app.wd
+        wd.find_elements_by_name("selected[]")[index].click()
+
+    def delete_first_contact(self):
+        self.delete_contact_by_index(0)
+
+    def delete_contact_by_index(self, index):
+        wd = self.app.wd
+        wd.find_element_by_link_text("home").click()
+        # select some contact
+        self.select_contact_by_index(index)
         # submit deletion
         wd.find_element_by_css_selector("[value=Delete]").click()
         wd.switch_to_alert().accept()
@@ -79,14 +90,25 @@ class ContactHelper:
         wd.find_element_by_xpath("//div[@id='content']/form/input[21]").click()
         self.contact_cache = None
 
+    def populate_contact_form(self):
+        wd = self.app.wd
+        wd.find_element_by_name("firstname").click()
+        wd.find_element_by_name("firstname").send_keys(" added to first name")
+        wd.find_element_by_name("lastname").click()
+        wd.find_element_by_name("lastname").send_keys(" added to last name")
+
     def open_new_contact_page(self):
         wd = self.app.wd
         wd.find_element_by_link_text("add new").click()
 
     def edit_first_contact(self):
+        self.edit_contact_by_index(0)
+
+    def edit_contact_by_index(self, index):
         wd = self.app.wd
-        wd.get("http://localhost/addressbook/addressbook")
+        wd.find_element_by_link_text("home").click()
         # select first contact to edit
+        self.select_contact_by_index(index)
         wd.find_element_by_css_selector('[title="Edit"]').click()
         wd.find_element_by_name("firstname").click()
         wd.find_element_by_name("firstname").send_keys(" added to first name")
@@ -96,6 +118,9 @@ class ContactHelper:
         wd.find_element_by_name("lastname").send_keys(" added to last name")
         wd.find_element_by_name("nickname").click()
         wd.find_element_by_name("nickname").send_keys(" added to nick name")
+        # self.populate_contact_form()
+        wd.find_element_by_name("update").click()
+        # wd.get("http://localhost/addressbook/addressbook")
         self.contact_cache = None
 
     def open_home_page(self):

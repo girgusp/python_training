@@ -1,5 +1,6 @@
 {
   "test_add_contact.py::test_add_contact": true,
   "test_add_contact.py::test_add_empty_contact": true,
-  "test_edit_contact.py::test_edit_contact_name": true
+  "test_edit_contact.py::test_edit_contact_name": true,
+  "test_phones.py::test_phones_one_home_page": true
 }

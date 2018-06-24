@@ -1,8 +1,8 @@
 [
-  "test_add_group.py::test_add_group[None:;;]",
-  "test_add_group.py::test_add_group[None:name;header LgS1siFCk^N8\\\\`+Bt;footer&^zp7 MI(B]",
-  "test_add_group.py::test_add_group[None:nameAhZ,d;headeryke9})~-:F?.Tj;footer/\"u _f!;k4  1 $AXsa]",
-  "test_add_group.py::test_add_group[None:nameG;headerJsI;footer)gZGr_3}r]]",
-  "test_add_group.py::test_add_group[None:name2+% .!W;headerj2JL#5O1r<J|p( ;footer5kf]",
-  "test_add_group.py::test_add_group[None:name;header;footer'%_^T ,]"
+  "test_add_contact.py::test_add_contact[None:::]",
+  "test_add_contact.py::test_add_contact[None:first_name]KN~}x78G:last_nameMd:address :,/46<> U(fxu@v>]",
+  "test_add_contact.py::test_add_contact[None:first_name %gZ:last_name&r::addressD&3,]",
+  "test_add_contact.py::test_add_contact[None:first_namef:last_name,:address%: \\\\dJgm xZ]",
+  "test_add_contact.py::test_add_contact[None:first_name\\\\(&eBH:last_nameU-49:addresszxw H]",
+  "test_add_contact.py::test_add_contact[None:first_name1CfxF\"BC::last_name #f gHU:addressR)*tPrD%' ,9y6]"
 ]

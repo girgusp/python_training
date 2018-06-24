@@ -1,4 +1,8 @@
 [
-  "test_phones.py::test_phones_on_home_page",
-  "test_phones.py::test_phones_on_contact_view_page"
+  "test_add_group.py::test_add_group[None:;;]",
+  "test_add_group.py::test_add_group[None:name;header LgS1siFCk^N8\\\\`+Bt;footer&^zp7 MI(B]",
+  "test_add_group.py::test_add_group[None:nameAhZ,d;headeryke9})~-:F?.Tj;footer/\"u _f!;k4  1 $AXsa]",
+  "test_add_group.py::test_add_group[None:nameG;headerJsI;footer)gZGr_3}r]]",
+  "test_add_group.py::test_add_group[None:name2+% .!W;headerj2JL#5O1r<J|p( ;footer5kf]",
+  "test_add_group.py::test_add_group[None:name;header;footer'%_^T ,]"
 ]

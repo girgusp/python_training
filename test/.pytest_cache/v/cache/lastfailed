@@ -1,6 +1,13 @@
 {
   "test_add_contact.py::test_add_contact": true,
   "test_add_contact.py::test_add_empty_contact": true,
+  "test_add_group.py::test_add_group[None:name  OI;header 9HKiRcRF4x XX3;footer7lDX61RdD F]": true,
+  "test_add_group.py::test_add_group[None:name2I ;headerzHm  eCK9pMAv;footer3Qs6 o38vJ8q]": true,
+  "test_add_group.py::test_add_group[None:name;header;footer'%_^T ,]": true,
+  "test_add_group.py::test_add_group[None:nameSi ;headerWli;footerLG7kzbH u7oWGH]": true,
+  "test_add_group.py::test_add_group[None:nameXVM  ;headerqM0y;footer1JXy b5KsU]": true,
+  "test_add_group.py::test_add_group[None:namea7 25O h ;headers8GB  ;footerVe D c n 05k 4cxF6]": true,
+  "test_add_group.py::test_add_group[None:namev5Iz ;headerrdeW53m61KPjajV0p;footerB4rMDPpL0 v Wy2g7iI]": true,
   "test_edit_contact.py::test_edit_contact_name": true,
   "test_phones.py::test_phones_on_home_page": true,
   "test_phones.py::test_phones_one_home_page": true
